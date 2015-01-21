@@ -29,6 +29,31 @@ def print_dict(dictionary):
         print k, v
 
 new_dict = create_dict()
-print_dict(new_dict)
-
+#print_dict(new_dict)
+dict_range = max(new_dict.values())
+print dict_range
+#print type(dict_range)
+#print new_dict["a"]
+#print new_dict["the"]
 #print "" in new_dict
+
+sorted_keys = sorted(new_dict)
+sorted_keys.reverse()
+organized_list = []
+
+for i in range(1 , (dict_range + 1)):
+    if i not in new_dict.values():
+        continue
+    for key in sorted_keys:
+        if new_dict[key] == i:
+            organized_list.append((key, new_dict[key]))
+        else:
+            pass
+
+organized_list.reverse()
+
+def print_list(sample_list):
+    for k, v in sample_list:
+        print k, v
+print_list(organized_list)        
+
